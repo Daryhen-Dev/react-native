@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import FAB from './components/FAB';
 
 export default function App() {
+
+  const [count, setCount] = useState<number>(0)
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.textHuge}>{count}</Text>
+      {/* <Pressable style={styles.floatingButton} onPress={() => setCount(count + 1)} onLongPress={() =>setCount(0)}>
+        <Text style={{color: 'white', fontSize: 20}}>+1</Text>
+      </Pressable>     */}
+      <FAB label='+1' onPress={() => setCount(count+ 1)} onLongPress={() => setCount(0)} position='right' />
+      <FAB label='Reset' onPress={() => setCount(0)} position='left' />
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -16,5 +25,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textHuge:{
+    fontSize: 120,
+    fontWeight: '100'
   },
 });
