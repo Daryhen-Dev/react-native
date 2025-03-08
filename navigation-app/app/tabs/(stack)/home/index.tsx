@@ -11,30 +11,29 @@ const HomeScreen = () => {
         <CustomButtom
             className="mb-2"
             color="primary"
-            onPress={() => router.push("/products")}
+            onPress={() => router.push("/tabs/products")}
           >
             Products
           </CustomButtom>
           <CustomButtom
-            onPress={() => router.push("/settings")}
+            onPress={() => router.push("/tabs/settings")}
             className="mb-2"
             color="secondary"
           >
             Ajustes
           </CustomButtom>
           <CustomButtom
-            onPress={() => router.push("/profile")}
+            onPress={() => router.push("/tabs/profile")}
             className="mb-2"
             color="tertiary"
           >
             Profile
           </CustomButtom>
-          <Link href="/products" asChild>
+          <Link href="/tabs/products" asChild>
           <CustomButtom
           variant="text-only"
           className="mb-2"
             color="primary"
-            onPress={() => router.push("/products")}
           >
             Products
           </CustomButtom>
